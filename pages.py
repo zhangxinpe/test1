@@ -3,7 +3,7 @@ from transformers import pipeline
 def page_home():
     st.title('Home Page')
     # 在Home页面中显示数据和功能组件
-    pipe = pipeline("fill-mask", model=r"C:\Users\zxp\Desktop\models\albert-base-v2")
+    pipe = pipeline("fill-mask", model="./albert-base-v2")
 
     a=pipe(["Paris is the [MASK] of France."])
 

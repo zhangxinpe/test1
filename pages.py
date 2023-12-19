@@ -1,9 +1,14 @@
 import streamlit as st
-
+from transformers import pipeline
 def page_home():
     st.title('Home Page')
     # 在Home页面中显示数据和功能组件
+    pipe = pipeline("fill-mask", model=r"C:\Users\zxp\Desktop\models\albert-base-v2")
 
+    a=pipe(["Paris is the [MASK] of France."])
+
+    st.title('Home Page')
+    st.write(a)
 def page_about():
     st.title('About Page')
     # 在About页面中显示数据和功能组件
